@@ -2,14 +2,15 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
 
 
 class requestHandler(BaseHTTPRequestHandler):
-
-
-
-
-
-
-
-
+    def do_GET(self):
+        self.send_response(200)
+        self.send_header('content-type', 'text/html')
+        self.end_headers()
+        a = (self.date_time_string())
+        b = self.client_address[0]
+        c = self.command
+        d = self.path
+        e = self.client_address[1]
 
 
 def main():
