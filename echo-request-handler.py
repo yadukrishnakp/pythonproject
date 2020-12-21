@@ -11,6 +11,22 @@ class requestHandler(BaseHTTPRequestHandler):
         c = self.command
         d = self.path
         e = self.client_address[1]
+        output = ''
+        output += '<html><body>'
+        output += '<title>request information</title>'
+        output += '<h1>Echo request information</h1>'
+        output += '<h3>time and date</h3>'
+        output += str(a)
+        output += '<h3>client_host</h3>'
+        output += str(b)
+        output += '<h3>client_host</h3>'
+        output += str(e)
+        output += '<h3>command</h3>'
+        output += str(c)
+        output += '<h3>path</h3>'
+        output += str(d)
+        output += '</body></html>'
+        self.wfile.write((output.encode()))
 
 
 def main():
